@@ -42,7 +42,6 @@ header ul li a {
   position: relative;
   display: inline-block;
   margin: 0 15px;
-  color: #fff;
   text-decoration: none;
 }
 header.sticky ul li a {
