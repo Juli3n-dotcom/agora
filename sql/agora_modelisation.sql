@@ -9,6 +9,8 @@ create TABLE team
 (
        id INT(3) NOT NULL
        AUTO_INCREMENT,
+       username VARCHAR
+       (20) NOT NULL,
 nom VARCHAR
        (20) NOT NULL,
 prenom VARCHAR
