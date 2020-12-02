@@ -17,6 +17,12 @@ body {
   background-color: #fafafa;
   font-family: var(--poppins);
 }
+
+.sidebar,
+header,
+.dash__title {
+  display: none;
+}
 .wave {
   position: fixed;
   height: 100%;
