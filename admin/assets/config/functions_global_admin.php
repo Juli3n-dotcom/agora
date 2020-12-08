@@ -17,13 +17,13 @@ unset($_SESSION['flash']);
     return $messages;
   }
 
-   // récupération des membres de la team
-function getMembres(PDO $pdo):array
+// récupération des membres de la team
+function getTeam_members(PDO $pdo):array
 {
   $req=$pdo->query(
     'SELECT *
     FROM team
   ');
- $membre = $req->fetchAll(PDO::FETCH_ASSOC);
-return $membre;
+ $tmember = $req->fetchAll(PDO::FETCH_ASSOC);
+return $tmember;
 }

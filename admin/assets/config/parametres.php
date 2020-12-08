@@ -1,7 +1,7 @@
 <?php
 
 const DB_HOST = 'localhost';
-const DB_NAME = 'agora';
+const DB_NAME = 'FAIR_DB';
 const DB_USER = 'root';
 const DB_PASS = 'root';
 
@@ -13,3 +13,4 @@ const ROLE_EDITEUR = 2;
  //Civilité des utilisateurs
 const HOMME = 0;
 const FEMME = 1;
+const AUTRE = 2;

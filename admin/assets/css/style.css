@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
-
+@import url("flash.css");
 :root {
   --main-color: #027581;
   --color-dark: #1d2231;
@@ -30,7 +30,7 @@
   background: var(--main-color);
   color: #fff;
   overflow-y: auto;
-  transition: width 500ms;
+  transition: 0.5s;
 }
 
 .sidebar__header {
@@ -83,7 +83,7 @@
 .main__content {
   position: relative;
   margin-left: 240px;
-  transition: margin-left 500ms;
+  transition: 0.5s;
 }
 header {
   position: fixed;
@@ -97,7 +97,7 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
-  transition: left 500ms;
+  transition: 0.5s;
 }
 
 .search__wrapper {
@@ -199,24 +199,56 @@ main {
 
 .activity__card,
 .summary__card,
-.bday__card {
+.bday__card,
+.team__card {
   background: #fff;
   border-radius: 7px;
 }
 
-.activity__card h3 {
+.team__grid {
+  margin-bottom: 1rem;
+}
+
+.activity__card h3,
+.team__card h3 {
   color: var(--text-grey);
   margin: 1rem;
 }
 
-.activity__card table {
+.activity__card table,
+.team__card table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.activity__card thead {
+.activity__card thead,
+.team__card thead {
   background: #efefef;
   text-align: left;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__header button {
+  margin: 1rem;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  background: var(--main-color);
+  color: #fff;
+  transition: 0.5s;
+  border: none;
+  cursor: pointer;
+}
+.card__header button:hover {
+  color: var(--main-color);
+  background: #fff;
+  border: 1px solid var(--main-color);
 }
 
 .table-responsive {
@@ -234,12 +266,24 @@ tbody tr:nth-child(even) {
   background: #f9fafc;
 }
 
+.email_member {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
 .badge {
   padding: 0.2rem 1rem;
   border-radius: 20px;
   font-weight: 700;
   font-size: 0.7rem;
+  text-align: center;
+  width: 100%;
 }
+
+.badge.confirmation {
+  width: 50% !important;
+}
+
 .badge.success {
   background: #def7ec;
   color: var(--main-color);
@@ -250,31 +294,38 @@ tbody tr:nth-child(even) {
   color: orange;
 }
 
+.badge.danger {
+  background: rgb(220, 20, 60);
+  color: #fff;
+}
+
+.badge.admin {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.badge.user {
+  background: rgb(30, 144, 255);
+  color: #fff;
+}
+
+.badge.editer {
+  background: rgb(60, 179, 113);
+  color: #fff;
+}
+
 .td-team {
   display: flex;
   align-items: center;
 }
 
-.img-1,
-.img-2,
-.img-3 {
-  height: 38px;
-  width: 38px;
+.img-profil {
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
-  margin-left: -15px;
   border: 3px solid #efefef;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.img-1 {
-  background-image: url("../img/profil.svg");
-}
-.img-2 {
-  background-image: url("../img/female.svg");
-}
-.img-3 {
-  background-image: url("../img/male.svg");
 }
 
 .summary__card {
@@ -338,6 +389,136 @@ tbody tr:nth-child(even) {
   padding: 0.4rem 1rem;
 }
 
+/* **** Paginarion **** */
+
+.pagination {
+  text-align: center;
+}
+.pagination ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination ul li {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-family: var(--poppins);
+  margin: 0.2rem;
+}
+.pagination ul li.active {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 2px solid #efefef;
+}
+.pagination ul li a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+/* **** Modal ***** */
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+.modal-bg.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  height: auto;
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--poppins);
+  border-radius: 10px;
+}
+.modal__title {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+  background: var(--main-color);
+  color: #fff;
+}
+
+.modal form {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.modal form label {
+  text-align: left;
+  padding-left: 1rem;
+}
+.modal form input {
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid var(--text-grey);
+  margin: 1rem;
+}
+.modal form input:focus {
+  width: 60%;
+  border: none !important;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.modal form .modal__footer input {
+  width: 100%;
+  margin: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--main-color);
+  color: #fff;
+  transition: 0.5s;
+  border: none;
+  cursor: pointer;
+}
+
+.modal form .modal__footer input:hover {
+  color: var(--main-color);
+  background: #fff;
+  border: 1px solid var(--main-color);
+}
+.modal .custom-select {
+  border: 1px solid #ccc;
+  border-radius: 9px;
+  width: 100%;
+  padding: 0.2rem;
+}
+.modal-close {
+  position: absolute;
+  font-size: 1rem;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  color: #ccc;
+  cursor: pointer;
+}
+.modal-close:hover {
+  color: var(--color-dark);
+}
 /* **** Responsive **** */
 
 @media only screen and (max-width: 1200px) {
@@ -389,6 +570,9 @@ tbody tr:nth-child(even) {
   #sidebar-toggle:checked ~ .main__content header {
     left: 60px;
   }
+  .badge {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 860px) {
@@ -404,6 +588,9 @@ tbody tr:nth-child(even) {
   .summary {
     margin-top: 1.5rem;
   }
+  .modal {
+    width: 70%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -416,5 +603,8 @@ tbody tr:nth-child(even) {
   main {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  .modal {
+    width: 100%;
   }
 }

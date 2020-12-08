@@ -32,7 +32,7 @@ else{
          <div class="sidebar__menu">
          <ul>
               <li>
-                    <a href="">
+                    <a href="index_admin.php">
                          <span class="ti-home"></span>
                          <span>Home</span>
                     </a>
@@ -50,7 +50,7 @@ else{
                     </a>
                </li>
                <li>
-                    <a href="">
+                    <a href="team.php">
                          <i class="fas fa-laugh-beam"></i>
                          <span>Team</span>
                     </a>

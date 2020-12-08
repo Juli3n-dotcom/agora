@@ -2,10 +2,10 @@
 require_once __DIR__ . '/assets/config/bootstrap.php';
 require_once __DIR__ . '/assets/config/functions_global_admin.php';
 
-$membre = getMembres($pdo, $_GET['id'] ?? null);
+$tmember = getTeam_members($pdo, $_GET['id'] ?? null);
 
 
-if(($membre === null)){
+if(($tmember === null)){
   $msg = 'membre est null';
   // ajouterFlash('danger','Veuillez vous connecter');
   // header('location:login_admin.php');
