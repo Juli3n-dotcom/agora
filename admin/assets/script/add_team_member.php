@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../config/bootstrap.php';
 require_once __DIR__ . '/../functions/team_functions.php';
 
+
 $msg = '';
 $status = '';
 
@@ -94,10 +95,10 @@ if(!preg_match('~^[a-zA-Z-]+$~',$_POST['name'])){
         $req->bindParam(':name',$name);
         $req->execute();
 
-        if($req){
-            $status = 'success';
-            $msg = 'Membre ajouté';   
-        }
+        unset($_POST);
+        $status = 'success';
+        $msg = 'Membre Ajouté !';
+
 
 }
     $resultat = '';
@@ -109,56 +110,15 @@ if(!preg_match('~^[a-zA-Z-]+$~',$_POST['name'])){
     $resultat .= '<p>' .$msg. '</p>';
     $resultat .= '</div>';      
     $resultat .= '</div>';
+    $resultat .= '<script>
+                    
+                    setTimeout(function(){ document.querySelector(".notif").remove();}, 3000 );
 
+                     document.querySelector(".toats_die").addEventListener("click", ()=>{
+                        document.querySelector(".notif").remove();
+                     });
+                </script>';
 
-    $resultat.= '<tbody>';
-    //         while ($member = $Allmembres->fetch() ){
-
-    //         // changement format date
-    //         $date = str_replace('/', '-', $member['date_enregistrement']);
-    //         //récupération de la photo de profil
-    //         $id_photo = $member['photo_id'];
-    //         $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
-    //         $photo = $data->fetch(PDO::FETCH_ASSOC);
-
-    // $resultat.= '<tr>';
-    //     $resultat .= '<td>'.$member['nom'].'</td>';
-    //     $resultat .= '<td>'.$member['prenom'].'</td>';
-    //     $resultat .= '<td class="td-team">';
-    //                      if ($member['photo_id'] == NULL) {
-    //                         if($member['civilite'] == 0) {
-    //                           echo "<div class='img-profil' style='background-image: url(assets/photos/male.svg)'></div>";
-    //                           }elseif($member['civilite'] == 1){
-    //                           echo "<div class='img-profil' style='background-image: url(assets/photos/female.svg)'></div>";
-    //                         }else{
-    //                           echo "<div class='img-profil' style='background-image: url(assets/photos/profil.svg)'></div>";
-    //                         }
-    //                       }else{
-    //                         echo "<div class='img-profil' style='background-image: url(assets/photos/ " .$photo['profil']. " )'></div>";
-    //                       }
-    //     $resultat .= '</td>';
-    //     $resultat .= '<td><a href="mailto:'.$member['email'].'" class="email_member">'.$member['email'].'</a></td>';
-    //     $resultat .= '<td>';
-    //                       if ($member['statut'] == 0){
-    //                             echo '<p class="badge admin">Admin</p>';
-    //                       } elseif($member['statut'] == 1){
-    //                             echo '<p class="badge user">User</p>';
-    //                       }else{
-    //                             echo '<p class="badge editer">Editeur</p>';
-    //                       }
-    //     $resultat .= '</td>';
-    //     $resultat .= '<td>';
-    //                       if ($member['confirmation'] == 0){
-    //                           echo '<p class="badge danger confirmation">Non</p>';
-    //                       }else{
-    //                           echo '<p class="badge success confirmation">Oui</p>';
-    //                       }
-    //     $resultat .= '</td>';   
-    //     $resultat .= '<td>'. date('d-m-Y', strtotime($date)).'</td>';   
-    //     $resultat .= '<td></td>';
-    // $resultat .= '</tr>';
-    //         }
-$resultat .= '</tbody> ';
 
     $tableau['resultat'] = $resultat;
 

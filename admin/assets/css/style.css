@@ -160,7 +160,8 @@ main {
   align-items: center;
 }
 
-.card__body span {
+.card__body span,
+.card__body i {
   font-size: 1.7rem;
   color: #777;
   padding-right: 1.4rem;
@@ -260,6 +261,18 @@ td {
   font-size: 0.9rem;
   padding: 1rem 1rem;
   color: var(--color-dark);
+}
+
+.member_action a {
+  text-decoration: none;
+}
+.member_action a:first-child {
+  margin-right: 10px;
+  color: var(--main-color);
+}
+
+.member_action a:last-child {
+  color: rgba(240, 52, 52, 0.8);
 }
 
 tbody tr:nth-child(even) {
@@ -476,6 +489,7 @@ tbody tr:nth-child(even) {
   border-bottom: 1px solid var(--text-grey);
   margin: 1rem;
 }
+
 .modal form input:focus {
   width: 60%;
   border: none !important;

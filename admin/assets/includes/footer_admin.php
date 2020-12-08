@@ -6,16 +6,17 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous">
 </script>
-  <script type="text/javascript" src="assets/ajax/team_ajax.js"></script>
 <?php
 if (stripos($_SERVER['REQUEST_URI'], 'login_admin.php')){
      echo '<script type="text/javascript" src="assets/js/login_admin.js"></script>';
-}
-else{
-     echo '<script type="text/javascript" src="assets/js/app.js"></script>';
+}elseif (stripos($_SERVER['REQUEST_URI'], 'team.php')){
+    echo '<script type="text/javascript" src="assets/js/team_admin.js"></script>';
+    echo ' <script type="text/javascript" src="assets/ajax/team_ajax.js"></script>';
+}else{
+     echo '';
    
 }
 ?>   
-
+<script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 </html>

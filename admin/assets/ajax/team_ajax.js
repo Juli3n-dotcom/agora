@@ -19,20 +19,15 @@ $(document).ready(function(){
                     if (data.status == 'success') {
                         $('.modal-bg').removeClass('active');
                         console.log(data.status)
-                        retour = $('.resultat').html(data.resultat);
-                        return retour;
+                        $('.resultat').html(data.resultat);
                     } else {
                         console.log(data.status)
-                        retour = $('.resultat').html(data.resultat);
-                        return retour;
+                        $('.resultat').html(data.resultat);
                     }
                 }
             });
         });
     });
 
-   
 
-    
-    
 });

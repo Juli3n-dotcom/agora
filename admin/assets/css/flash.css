@@ -26,7 +26,7 @@
   background-color: rgba(0, 177, 106, 0.8) !important;
 }
 #toats.hiden {
-  visibility: hidden;
+  display: none;
 }
 #toats .toats_headers {
   margin-bottom: 1rem;

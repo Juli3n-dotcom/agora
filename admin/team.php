@@ -3,19 +3,63 @@ require_once __DIR__ . '/assets/config/bootstrap.php';
 require_once __DIR__ . '/assets/config/functions_global_admin.php';
 require_once __DIR__ . '/assets/functions/team_functions.php';
 
+// $sql =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 0');
+// $data_membre = $sql->fetch();
+// $admin =$data_membre['nb'];
 
 $page_title ='Team';
 include __DIR__. '/assets/includes/header_admin.php';
 ?>
 <?php include __DIR__.'/assets/includes/flash.php';?>
 
+<div class="dash__cards">
 
+    <div class="card__single">
+      <div class="card__body">
+        <i class="fas fa-user-shield"></i>
+        <div>
+          <h5>Admin</h5>
+          <h4><?= $admin ?></h4>
+        </div>
+      </div>
+      <div class="card__footer">
+      <a href="">View all</a>
+      </div>
+    </div>
+
+    <div class="card__single">
+      <div class="card__body">
+        <i class="fas fa-user"></i>
+        <div>
+          <h5>User</h5>
+          <h4><?= $user ?></h4>
+        </div>
+      </div>
+      <div class="card__footer">
+      <a href="">View all</a>
+      </div>
+    </div>
+
+    <div class="card__single">
+      <div class="card__body">
+        <i class="fas fa-user-edit"></i>
+        <div>
+          <h5>Editeur</h5>
+          <h4><?= $editeur?></h4>
+        </div>
+      </div>
+      <div class="card__footer">
+      <a href="">View all</a>
+      </div>
+    </div>
+
+  </div>
 
 <section class="recent">
     <div class="team__grid">
       <div class="team__card">
           <div class="card__header">
-            <h3>All Team</h3>
+            <h3>All Team </h3>
             <button id="add_team_member">
                 <i class="fas fa-user-plus"></i>
                 Ajouter
@@ -88,8 +132,20 @@ include __DIR__. '/assets/includes/header_admin.php';
                     <?php endif;?>   
                     </td>
                     <td><?= date('d-m-Y', strtotime($date))?> </td>
-                    <td></td>
+                    <td class="member_action">
+
+                        <a href="#"><i class="fas fa-edit"></i></a>
+
+                        <a 
+                          href="#id=<?=$member['id_team_member']?>" 
+                          class="delete_team_member">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+
+                    </td>
                 </tr>
+
+
             <?php endwhile; ?>
           </tbody>
 
@@ -167,6 +223,9 @@ include __DIR__. '/assets/includes/header_admin.php';
           </form>
       </div>
   </div>
+
+  
+
 <?php 
 include __DIR__. '/assets/includes/footer_admin.php';
 ?>

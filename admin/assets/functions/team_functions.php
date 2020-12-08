@@ -32,3 +32,17 @@ function getMembreBy(PDO $pdo, string $colonne, $valeur): ?array
      $utilisateur =$req->fetch(PDO::FETCH_ASSOC);
      return $utilisateur ?: null;
       }
+
+  
+// récupération team member par role
+$sql =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 0');
+$data_membre = $sql->fetch();
+$admin =$data_membre['nb'];
+
+$sql2 =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 1');
+$data_membre = $sql2->fetch();
+$user =$data_membre['nb'];
+
+$sql3 =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 2');
+$data_membre = $sql3->fetch();
+$editeur =$data_membre['nb'];
