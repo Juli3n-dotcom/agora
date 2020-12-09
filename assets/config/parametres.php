@@ -14,3 +14,7 @@ const ROLE_EDITEUR = 2;
 const HOMME = 0;
 const FEMME = 1;
 const AUTRE = 2;
+
+//Confirmation
+const NON_CONFIRME = 0;
+const CONFIRME = 1;

@@ -17,7 +17,20 @@ $depart = ($pageCourante-1)*$membresParPage;
 $Allmembres = $pdo->query('SELECT * FROM team ORDER BY date_enregistrement DESC LIMIT '.$depart.','.$membresParPage);
 
 
-function getMembreBy(PDO $pdo, string $colonne, $valeur): ?array
+
+function getMember(PDO $pdo):array
+{
+  $req=$pdo->query(
+     'SELECT *
+       FROM team'
+  );
+  $memberTeam = $req->fetchAll(PDO::FETCH_ASSOC);
+  return $memberTeam;
+}
+
+
+
+function getMemberBy(PDO $pdo, string $colonne, $valeur): ?array
      {
        $req =$pdo->prepare(sprintf(
        'SELECT *

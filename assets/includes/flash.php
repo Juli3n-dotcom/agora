@@ -15,13 +15,10 @@
 </div>
 
 <script>
-    const toats = document.querySelector('.notif');
-    const close_toats = document.querySelector('.toats_die');
+    setTimeout(function(){ document.querySelector(".notif").remove();}, 3000 );
 
-    setTimeout(function(){ document.querySelector(".notif").classList.add("hiden");}, 3000 );
-
-    close_toats.addEventListener('click', ()=>{
-    toats.classList.add('hiden');
+    document.querySelector(".toats_die").addEventListener("click", ()=>{
+        document.querySelector(".notif").remove();
     });
 </script>
 

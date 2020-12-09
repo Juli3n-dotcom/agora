@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
-@import url("flash.css");
+@import url("../../../assets/css/flash.css");
+@import url("../../../assets/css/checkbox.css");
+
 :root {
   --main-color: #027581;
   --color-dark: #1d2231;
@@ -12,8 +14,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--poppins);
-  text-decoration: none;
+  text-decoration: none !important;
   list-style-type: none;
+}
+.dnone {
+  display: none;
 }
 
 #sidebar-toggle {
@@ -43,6 +48,9 @@
 
 .sidebar__menu {
   padding: 1rem;
+}
+.sidebar__menu ul {
+  padding-left: 0;
 }
 .sidebar li {
   margin-bottom: 1.2rem;
@@ -234,7 +242,13 @@ main {
   align-items: center;
 }
 
-.card__header button {
+.card__header button,
+.card__header a,
+.addBtn,
+.updateBtn,
+.closeBtn,
+.deleteBtn,
+.disabledBtn {
   margin: 1rem;
   padding: 0.2rem 1rem;
   border-radius: 20px;
@@ -246,7 +260,33 @@ main {
   border: none;
   cursor: pointer;
 }
-.card__header button:hover {
+
+.addBtn,
+.updateBtn,
+.closeBtn,
+.deleteBtn,
+.disabledBtn {
+  font-size: 1rem;
+}
+
+.closeBtn {
+  background: var(--text-grey);
+}
+.disabledBtn {
+  background: var(--text-grey);
+}
+.deleteBtn {
+  background: rgba(240, 52, 52, 0.8);
+}
+.deleteBtn:hover {
+  background: #fff;
+  border: 1px solid rgba(240, 52, 52, 0.8);
+  color: rgba(240, 52, 52, 0.8);
+}
+.card__header button:hover,
+.card__header a:hover,
+.addBtn:hover,
+.updateBtn:hover {
   color: var(--main-color);
   background: #fff;
   border: 1px solid var(--main-color);
@@ -433,7 +473,8 @@ tbody tr:nth-child(even) {
 
 /* **** Modal ***** */
 
-.modal-bg {
+/* .modal-bg,
+.modal-bg-delete {
   position: fixed;
   top: 0;
   left: 0;
@@ -448,7 +489,8 @@ tbody tr:nth-child(even) {
   opacity: 0;
   transition: visibility 0s, opacity 0.5s;
 }
-.modal-bg.active {
+.modal-bg.active,
+.modal-bg-delete.active {
   visibility: visible;
   opacity: 1;
 }
@@ -514,7 +556,7 @@ tbody tr:nth-child(even) {
   color: var(--main-color);
   background: #fff;
   border: 1px solid var(--main-color);
-}
+}*/
 .modal .custom-select {
   border: 1px solid #ccc;
   border-radius: 9px;
@@ -532,6 +574,26 @@ tbody tr:nth-child(even) {
 }
 .modal-close:hover {
   color: var(--color-dark);
+}
+.modal-content {
+  border-radius: 7px;
+}
+.modal-header {
+  background-color: var(--main-color);
+  color: #fff;
+}
+#deletemodal .modal-header {
+  background-color: rgba(240, 52, 52, 0.8);
+  color: #fff;
+}
+.btn-close {
+  background: transparent url("../../../assets/img/cancel.svg") center/1em auto
+    no-repeat;
+  opacity: 1;
+}
+.modal-footer {
+  margin-top: 2rem;
+  padding: 0;
 }
 /* **** Responsive **** */
 
