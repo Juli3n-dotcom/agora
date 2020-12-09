@@ -445,6 +445,7 @@ tbody tr:nth-child(even) {
 /* **** Paginarion **** */
 
 .pagination {
+  display: block;
   text-align: center;
 }
 .pagination ul {
@@ -473,90 +474,6 @@ tbody tr:nth-child(even) {
 
 /* **** Modal ***** */
 
-/* .modal-bg,
-.modal-bg-delete {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 200;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s;
-}
-.modal-bg.active,
-.modal-bg-delete.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal {
-  position: relative;
-  background: #fff;
-  height: auto;
-  width: 40%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  font-family: var(--poppins);
-  border-radius: 10px;
-}
-.modal__title {
-  border-bottom: 1px solid #ccc;
-  padding: 0.5rem;
-  background: var(--main-color);
-  color: #fff;
-}
-
-.modal form {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-.modal form label {
-  text-align: left;
-  padding-left: 1rem;
-}
-.modal form input {
-  width: 50%;
-  border: none;
-  border-bottom: 1px solid var(--text-grey);
-  margin: 1rem;
-}
-
-.modal form input:focus {
-  width: 60%;
-  border: none !important;
-  border-bottom: 2px solid var(--main-color);
-}
-
-.modal form .modal__footer input {
-  width: 100%;
-  margin: 1rem;
-  padding: 0.5rem 1.5rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 1rem;
-  background: var(--main-color);
-  color: #fff;
-  transition: 0.5s;
-  border: none;
-  cursor: pointer;
-}
-
-.modal form .modal__footer input:hover {
-  color: var(--main-color);
-  background: #fff;
-  border: 1px solid var(--main-color);
-}*/
 .modal .custom-select {
   border: 1px solid #ccc;
   border-radius: 9px;

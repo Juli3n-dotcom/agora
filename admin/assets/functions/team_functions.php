@@ -1,7 +1,7 @@
 <?php
 
 // gestion de l'affichage
-$membresParPage = 20;
+$membresParPage = 10;
 $membresTotalesReq = $pdo->query('SELECT id_team_member FROM team');
 $membresTotales = $membresTotalesReq->rowCount();
 $pageTotales = ceil($membresTotales/$membresParPage);

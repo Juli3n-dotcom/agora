@@ -169,9 +169,9 @@ include __DIR__. '/assets/includes/header_admin.php';
         <?php
             for($i=1;$i<=$pageTotales;$i++){
             if($i == $pageCourante){
-                echo '<li class=" active" aria-current="page"><span class="page-link">'.$i.'<span class="sr-only">(current)</span></span></li>';
+                echo '<li class=" active" aria-current="page"><span class="">'.$i.'<span class="sr-only">(current)</span></span></li>';
             }else{
-                echo'<li class=""><a class="page-link" href="team.php?page='.$i.'">'.$i.'</a></li> ';
+                echo'<li class=""><a class="" href="team.php?page='.$i.'">'.$i.'</a></li> ';
             }
             }
         ?>
