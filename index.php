@@ -1,4 +1,4 @@
 <?php
 $page_title ='Accueil';
-include __DIR__. '/assets/includes/header.php'
+include __DIR__. '/global/includes/header.php'
 ?>

@@ -1,0 +1,11 @@
+:root {
+  /* ##### COLOR ##### */
+  --light-black: rgba(0, 0, 0, 0.7);
+  --light-white: rgba(255, 255, 255, 0.7);
+  --orange: #f9a826;
+  --green: #00bfa6;
+
+  /* ##### Font ##### */
+
+  --arial: Arial, sans-serif;
+}

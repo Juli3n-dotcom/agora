@@ -9,7 +9,7 @@ $page_title ='Team';
 include __DIR__. '/assets/includes/header_admin.php';
 ?>
 
-<?php include __DIR__.'/../assets/includes/flash.php';?>
+<?php include __DIR__.'/../global/includes/flash.php';?>
 
 <div class="notif"></div>
 

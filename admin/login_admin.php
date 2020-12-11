@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/assets/config/bootstrap.php';
+require_once __DIR__ . '/assets/config/bootstrap_admin.php';
 
 $notification = '';
 $username = '';

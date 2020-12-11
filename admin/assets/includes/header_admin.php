@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>FAIR | <?=$page_title?></title>
+    <title><?= $web_name ;?> | <?=$page_title?></title>
 
 <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -27,7 +27,7 @@ else{
          <div class="sidebar__header">
            <h3 class="brand">
               <span class="ti-unlink"></span>
-              <span>FAIR</span>
+              <span><?= $web_name ;?></span>
            </h3> 
             <label for="sidebar-toggle" class="ti-menu-alt"></label>
          </div>

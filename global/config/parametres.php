@@ -18,3 +18,6 @@ const AUTRE = 2;
 //Confirmation
 const NON_CONFIRME = 0;
 const CONFIRME = 1;
+
+// Nom du site
+$web_name = 'FAIR.';
