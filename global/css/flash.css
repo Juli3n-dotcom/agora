@@ -1,12 +1,13 @@
 /* ***************** */
 /* ***** flash ***** */
 /* ***************** */
+@import url("var.css");
 
 #toats {
   position: fixed;
   top: 4rem;
   right: 1rem;
-  color: var(--white-fa);
+  color: var(--light-white);
   border-radius: 7px;
   min-width: 200px;
   width: auto;
@@ -20,10 +21,10 @@
   color: #fff;
 }
 #toats.alert-error {
-  background-color: rgba(240, 52, 52, 0.8);
+  background-color: var(--error);
 }
 #toats.alert-success {
-  background-color: rgba(0, 177, 106, 0.8) !important;
+  background-color: var(--success);
 }
 #toats.hiden {
   display: none;

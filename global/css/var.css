@@ -4,6 +4,8 @@
   --light-white: rgba(255, 255, 255, 0.7);
   --orange: #f9a826;
   --green: #00bfa6;
+  --success: rgba(0, 177, 106, 0.8) !important;
+  --error: rgba(240, 52, 52, 0.8) !important;
 
   /* ##### Font ##### */
 

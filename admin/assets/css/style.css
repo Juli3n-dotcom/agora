@@ -1,13 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 @import url("../../../global/css/flash.css");
 @import url("../../../global/css/checkbox.css");
-
-:root {
-  --main-color: #027581;
-  --color-dark: #1d2231;
-  --text-grey: #8390a2;
-  --poppins: "Poppins", sans-serif;
-}
+@import url("../../../global/css/var.css");
+@import url("var_admin.css");
 
 * {
   margin: 0;
