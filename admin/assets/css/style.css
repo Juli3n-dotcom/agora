@@ -273,6 +273,7 @@ main {
 .deleteBtn {
   background: rgba(240, 52, 52, 0.8);
 }
+
 .deleteBtn:hover {
   background: #fff;
   border: 1px solid rgba(240, 52, 52, 0.8);
@@ -301,7 +302,7 @@ td {
 .member_action a {
   text-decoration: none;
 }
-.member_action a:first-child {
+.member_action a {
   margin-right: 10px;
   color: var(--main-color);
 }
@@ -507,6 +508,20 @@ tbody tr:nth-child(even) {
   margin-top: 2rem;
   padding: 0;
 }
+
+/* **** modal view team member **** */
+
+.list_container ul li {
+  display: flex;
+}
+.list_container ul li h6 {
+  margin-right: 2rem;
+  font-weight: bold;
+}
+.list_container ul li p {
+  max-width: 100px;
+}
+
 /* **** Responsive **** */
 
 @media only screen and (max-width: 1200px) {

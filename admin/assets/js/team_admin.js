@@ -6,7 +6,6 @@ $(document).ready(function () {
     });
 
 
-
     //modal edit team member
     $('.editbtn').on('click', function () {
         $('#editmodal').modal('show');
