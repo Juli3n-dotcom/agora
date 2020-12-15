@@ -144,6 +144,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                     </td>
                     <!-- <td><?= date('d-m-Y', strtotime($date))?> </td> -->
                     <td class="member_action">
+                        <a href="team.php?id=<?=$member['id_team_member'];?>" class="viewbtn" data-bs-toggle="modal" data-bs-target="#<?= $member['name'];?>"><i class="fa fa-eye"></i></a>
                         <a href="#" class="editbtn"><i class="fas fa-edit"></i></a>
                         <a href="#" class="delete_team_member"><i class="fas fa-trash-alt"></i></a>
                     </td>
@@ -241,6 +242,77 @@ include __DIR__. '/assets/includes/header_admin.php';
   </div>
 </div>
 
+<!-- ############################################## ***** Modal view team member ***** ########################################################## -->
+  
+  <!-- Modal -->
+<div class="modal fade" id="<?= $member['name'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">View Team Member | N° <?= $member['id_team_member'] ;?></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="list_container">
+          <ul>
+            <li>
+              <h6>ID : </h6>
+              <p><?= $member['id_team_member'] ;?></p>
+            </li>
+            <li>
+              <h6>Nom : </h6>
+              <p><?= $member['nom'] ;?></p>
+            </li>
+            <li>
+              <h6>Prenom : </h6>
+              <p><?= $member['prenom'] ;?></p>
+            </li>
+            <li>
+              <h6>Email : </h6>
+              <p><?= $member['email'] ;?></p>
+            </li>
+            <li>
+              <h6>Username : </h6>
+              <p><?= $member['username'] ;?></p>
+            </li>
+            <li>
+              <h6>Status : </h6>
+              <p>
+                <?php if($member['statut'] == 0){
+                        echo '<p class="badge admin">Admin</p>';
+                      }else if($member['statut'] == 1){
+                        echo '<p class="badge user">User</p>';
+                      }else{
+                        echo '<p class="badge editer">Editeur</p>';
+                      }
+                      ?>
+              </p>
+            </li>
+            <li>
+              <h6>Confirmation : </h6>
+              <p>
+                <?php if($member['confirmation'] == 0){
+                        echo '<p class="badge danger confirmation">Non</p>';
+                      }else{
+                        echo '<p class="badge success confirmation">Oui</p>';
+                      }
+                      ?>
+              </p>
+            </li>
+            <li>
+              <h6>Date d'enregistrement : </h6>
+              <p><?= date('d-m-Y', strtotime($date)) ;?></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="closeBtn" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ############################################## ***** Modal edit team member ***** ########################################################## -->
   
   <!-- Modal -->
@@ -297,7 +369,7 @@ include __DIR__. '/assets/includes/header_admin.php';
             </div>
 
             <div class="modal-footer">
-              <button type="submit" name="updatemember" class="updateBtn">Valider</button>
+              <button type="submit" name="updatemember" class="updateBtn" >Valider</button>
             </div>
           </form>
       </div>
