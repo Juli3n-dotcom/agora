@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("../../../global/css/flash.css");
+@import url("../../../global/css/checkbox.css");
 
 :root {
   --poppins: "Poppins", sans-serif;
@@ -20,7 +22,8 @@ body {
 
 .sidebar,
 header,
-.dash__title {
+.dash__title,
+#sidebar-toggle {
   display: none;
 }
 .wave {

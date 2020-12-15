@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE){
+    session_start();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +20,10 @@ if (stripos($_SERVER['REQUEST_URI'], 'login_admin.php')){
 }
 else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
      echo '<link rel="stylesheet" href="assets/css/register_admin.css">'; 
+}else{
+     echo '<link rel="stylesheet" href="assets/css/style.css">';
 }
 ?>   
-<link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.min.css">
 <script src="https://kit.fontawesome.com/3760b9e264.js" crossorigin="anonymous"></script>
 </head>

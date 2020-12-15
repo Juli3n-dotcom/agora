@@ -5,9 +5,8 @@ $tmember = getTeam_members($pdo, $_GET['id'] ?? null);
 
 
 if(($tmember === null)){
-  $msg = 'membre est null';
-  // ajouterFlash('danger','Veuillez vous connecter');
-  // header('location:login_admin.php');
+  ajouterFlash('danger','Veuillez vous connecter');
+  header('location:login_admin.php');
 }
 
 $page_title ='Back Office';

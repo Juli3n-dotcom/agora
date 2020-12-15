@@ -1,4 +1,5 @@
 @import url("../../../global/css/var.css");
+@import url("style.css");
 @import url("var_admin.css");
 
 .register__container {

@@ -48,7 +48,7 @@ if(isset($_POST['add_team_member'])){
     $explode_name = explode(' ',$_POST['add_name_member']);
     $explode_fn = explode(' ',$_POST['add_prenom_member']);
 
-    $username = $a.$explode_name[0];
+    $username = strtolower($a.$explode_name[0]);
     $name = 'Fr'.$explode_fn[0].$explode_name[0].bin2hex(random_bytes(6));
 
     //autres valeurs
