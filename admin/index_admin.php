@@ -206,6 +206,7 @@ include __DIR__. '/assets/includes/header_admin.php';
       </div>
     </div>
   </section>
+  
 <?php
 include __DIR__. '/assets/includes/footer_admin.php';
 ?>

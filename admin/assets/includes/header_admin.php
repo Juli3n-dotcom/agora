@@ -23,6 +23,8 @@ if (stripos($_SERVER['REQUEST_URI'], 'login_admin.php')){
 }
 else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
      echo '<link rel="stylesheet" href="assets/css/register_admin.css">'; 
+}else if(stripos($_SERVER['REQUEST_URI'], 'profil_admin.php')){
+     echo '<link rel="stylesheet" href="assets/css/profil_admin.css">'; 
 }else{
      echo '<link rel="stylesheet" href="assets/css/style.css">';
 }
@@ -112,11 +114,11 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                               <?php
                                    if ($Membre['photo_id'] == NULL) {
                                         if($Membre['civilite'] == 0) {
-                              echo "<img src='assets/photos/male.svg' alt='photo_profil_male'>";
+                              echo "<img src='assets/img/male.svg' alt='photo_profil_male'>";
                               }elseif($Membre['civilite'] == 1){
-                              echo "<img src='assets/photos/female.svg' alt='photo_profil_female'>";
+                              echo "<img src='assets/img/female.svg' alt='photo_profil_female'>";
                             }else{
-                              echo "<img src='assets/photos/profil.svg' alt='photo_profil_other'>";
+                              echo "<img src='assets/img/profil.svg' alt='photo_profil_other'>";
                             }
                           }else{
                             echo "<img src='assets/photos/ " .$photo['profil']. " )' alt='photo_profil'>";
@@ -128,7 +130,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                               <ul>
                                    <li>
                                         <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                        <a href="#"> Mon Profil</a>
+                                        <a href="profil_admin.php"> Mon Profil</a>
                                    </li>
                                    <li>
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 

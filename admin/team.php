@@ -114,11 +114,11 @@ include __DIR__. '/assets/includes/header_admin.php';
                         <?php
                           if ($member['photo_id'] == NULL) {
                             if($member['civilite'] == 0) {
-                              echo "<div class='img-profil' style='background-image: url(assets/photos/male.svg)'></div>";
+                              echo "<div class='img-profil' style='background-image: url(assets/img/male.svg)'></div>";
                               }elseif($member['civilite'] == 1){
-                              echo "<div class='img-profil' style='background-image: url(assets/photos/female.svg)'></div>";
+                              echo "<div class='img-profil' style='background-image: url(assets/img/female.svg)'></div>";
                             }else{
-                              echo "<div class='img-profil' style='background-image: url(assets/photos/profil.svg)'></div>";
+                              echo "<div class='img-profil' style='background-image: url(assets/img/profil.svg)'></div>";
                             }
                           }else{
                             echo "<div class='img-profil' style='background-image: url(assets/photos/ " .$photo['profil']. " )'></div>";
