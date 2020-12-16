@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE){
   }
   require_once __DIR__ . '/../config/bootstrap_admin.php';
 
-  $Membre = getMembre($pdo, $_GET['id_membre'] ?? null);
+  $Membre = getMembre($pdo, $_GET['id_team_member'] ?? null);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,7 +106,49 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                <div class="social-icons">
                     <span class="ti-bell"></span>
                     <span class="ti-comment"></span>
-                    <div></div>
+                    <!-- Menu USER -->
+                    <div class="member_menu-action">
+                         <div class="profile" onclick="menuTeamToggle();">
+                              <?php
+                                   if ($Membre['photo_id'] == NULL) {
+                                        if($Membre['civilite'] == 0) {
+                              echo "<img src='assets/photos/male.svg' alt='photo_profil_male'>";
+                              }elseif($Membre['civilite'] == 1){
+                              echo "<img src='assets/photos/female.svg' alt='photo_profil_female'>";
+                            }else{
+                              echo "<img src='assets/photos/profil.svg' alt='photo_profil_other'>";
+                            }
+                          }else{
+                            echo "<img src='assets/photos/ " .$photo['profil']. " )' alt='photo_profil'>";
+                          }
+                        ?>
+                         </div>
+                         <div class="member_menu">
+                              <h3><?= $Membre['prenom'] ?> <?= $Membre['nom'] ?></h3>
+                              <ul>
+                                   <li>
+                                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                        <a href="#"> Mon Profil</a>
+                                   </li>
+                                   <li>
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                                        <a href="#">Modifier Profil</a>
+                                   </li>
+                                   <li>
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        <a href="#"> Messagerie</a>
+                                   </li>
+                                   <li>
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                        <a href="#"> Help</a>
+                                   </li>
+                                   <li>
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        <a href="#"> Déconnexion</a>
+                                   </li>
+                              </ul>
+                         </div>
+                    </div>
                </div>
           </header>
 
