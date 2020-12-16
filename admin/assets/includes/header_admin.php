@@ -144,7 +144,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                                    </li>
                                    <li>
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                        <a href="#"> Déconnexion</a>
+                                        <a href="assets/php/logout.php"> Déconnexion</a>
                                    </li>
                               </ul>
                          </div>
