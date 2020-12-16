@@ -64,10 +64,12 @@ include __DIR__. '/assets/includes/header_admin.php';
     <div class="team__card">
         <div class="card__header">
             <h3>All Team </h3>
+            <?php if($Membre['statut'] == 0) :?>
             <button id="add_team_member">
                 <i class="fas fa-user-plus"></i>
                 Ajouter
             </button>
+            <?php endif;?>
         </div>
 
         <div class="table-responsive">
@@ -82,7 +84,9 @@ include __DIR__. '/assets/includes/header_admin.php';
                 <th>Photo</th>
                 <th>Email</th>
                 <th>Status</th>
+                <?php if($Membre['statut'] == 0) :?>
                 <th>Confirmation</th>
+                <?php endif;?>
                 <th>Action</th>
             </tr>
           </thead>
@@ -133,6 +137,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                       }
                       ?>
                     </td>
+                    <?php if($Membre['statut'] == 0) :?>
                      <td class="dnone"><i><?=$member['confirmation']?></i></td><!--  object non visible pour récupérétion-->
                     <td>
                       <?php if($member['confirmation'] == 0){
@@ -142,11 +147,16 @@ include __DIR__. '/assets/includes/header_admin.php';
                       }
                       ?>
                     </td>
+                    <?php endif;?>
                     <!-- <td><?= date('d-m-Y', strtotime($date))?> </td> -->
                     <td class="member_action">
                         <a href="team.php?id=<?=$member['id_team_member'];?>" class="viewbtn" data-bs-toggle="modal" data-bs-target="#<?= $member['name'];?>"><i class="fa fa-eye"></i></a>
-                        <a href="#" class="editbtn"><i class="fas fa-edit"></i></a>
-                        <a href="#" class="delete_team_member"><i class="fas fa-trash-alt"></i></a>
+
+                        <?php if($Membre['statut'] == 0) :?>
+                          <a href="#" class="editbtn"><i class="fas fa-edit"></i></a>
+                          <a href="#" class="delete_team_member"><i class="fas fa-trash-alt"></i></a>
+                        <?php endif;?>
+                        
                     </td>
                 </tr>
 
@@ -184,7 +194,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 
 
 <!-- ############################################## ***** Modal add team member ***** ########################################################## -->
-
+<?php if($Membre['statut'] == 0) :?>
 <!-- Modal -->
 <div class="modal fade" id="addmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -241,7 +251,7 @@ include __DIR__. '/assets/includes/header_admin.php';
     </div>
   </div>
 </div>
-
+<?php endif;?>
 <!-- ############################################## ***** Modal view team member ***** ########################################################## -->
   
   <!-- Modal -->
@@ -288,6 +298,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                       ?>
               </p>
             </li>
+            <?php if($Membre['statut'] == 0) :?>
             <li>
               <h6>Confirmation : </h6>
               <p>
@@ -299,6 +310,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                       ?>
               </p>
             </li>
+            <?php endif ;?>
             <li>
               <h6>Date d'enregistrement : </h6>
               <p><?= date('d-m-Y', strtotime($date)) ;?></p>
@@ -314,7 +326,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 </div>
 
 <!-- ############################################## ***** Modal edit team member ***** ########################################################## -->
-  
+<?php if($Membre['statut'] == 0) :?>
   <!-- Modal -->
 <div class="modal fade" id="editmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -376,9 +388,9 @@ include __DIR__. '/assets/includes/header_admin.php';
     </div>
   </div>
 </div>
-
+<?php endif;?>
 <!-- ############################################## ***** Modal delete team member ***** ########################################################## -->
-
+<?php if($Membre['statut'] == 0) :?>
 <!-- Modal -->
 <div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -404,6 +416,7 @@ include __DIR__. '/assets/includes/header_admin.php';
     </div>
   </div>
 </div>
+<?php endif ;?>
 
 <?php 
 include __DIR__. '/assets/includes/footer_admin.php';

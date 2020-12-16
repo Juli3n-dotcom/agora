@@ -384,7 +384,7 @@ td {
   color: var(--main-color);
 }
 
-.member_action a:last-child {
+.member_action .delete_team_member {
   color: rgba(240, 52, 52, 0.8);
 }
 
