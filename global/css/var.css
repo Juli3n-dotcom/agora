@@ -2,10 +2,11 @@
   /* ##### COLOR ##### */
   --light-black: rgba(0, 0, 0, 0.7);
   --light-white: rgba(255, 255, 255, 0.7);
-  --orange: #f9a826;
+  --orange: rgba(249, 168, 38, 0.8);
   --green: #00bfa6;
   --success: rgba(0, 177, 106, 0.8) !important;
   --error: rgba(240, 52, 52, 0.8) !important;
+  --info: rgba(0, 191, 166, 0.8);
 
   /* ##### Font ##### */
 

@@ -15,7 +15,7 @@
 </div>
 
 <script>
-    setTimeout(function(){ document.querySelector(".notif").remove();}, 3000 );
+    setTimeout(function(){ document.querySelector(".notif").remove();}, 4000 );
 
     document.querySelector(".toats_die").addEventListener("click", ()=>{
         document.querySelector(".notif").remove();
