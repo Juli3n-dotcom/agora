@@ -15,6 +15,10 @@ if (stripos($_SERVER['REQUEST_URI'], 'login_admin.php')){
 }else{
      echo '';
 }
+
+if (!stripos($_SERVER['REQUEST_URI'],  'login_admin.php')){
+     echo '<script type="text/javascript" src="assets/js/logout.js"></script>';
+}
 ?>   
 <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
