@@ -98,6 +98,9 @@ include __DIR__. '/assets/includes/header_admin.php';
                 <?php
                 // changement format date
                 $date = str_replace('/', '-', $member['date_enregistrement']);
+                
+                // récupération de la derniere connexion
+                $last_login = str_replace('/', '-', $member['last_login']);
 
                 //récupération de la photo de profil
                 $id_photo = $member['photo_id'];
@@ -310,11 +313,18 @@ include __DIR__. '/assets/includes/header_admin.php';
                       ?>
               </p>
             </li>
-            <?php endif ;?>
+            
             <li>
               <h6>Date d'enregistrement : </h6>
               <p><?= date('d-m-Y', strtotime($date)) ;?></p>
             </li>
+            <?php if($member['last_login'] != NULL):?>
+            <li>
+              <h6>Derniére connexion : </h6>
+              <p><?= date('d-m-Y', strtotime($last_login)) ;?></p>
+            </li>
+            <?php  endif;?>
+            <?php endif ;?> <!--  end if visibilité admin (avant confirmation)-->
           </ul>
         </div>
       </div>

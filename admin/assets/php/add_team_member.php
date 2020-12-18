@@ -68,6 +68,7 @@ if(isset($_POST['add_team_member'])){
                 photo_id,
                 statut,
                 date_enregistrement,
+                last_login,
                 confirmation,
                 token,
                 name
@@ -82,6 +83,7 @@ if(isset($_POST['add_team_member'])){
                 :photo_id,
                 :statut,
                 :date,
+                :last_login,
                 :confirmation,
                 :token,
                 :name
@@ -97,6 +99,7 @@ if(isset($_POST['add_team_member'])){
         $req->bindValue(':photo_id',NULL);
         $req->bindValue(':statut',$statut);
         $req->bindValue(':date',(new DateTime())->format('Y-m-d H:i:s'));
+        $req->bindValue(':last_login',NULL);
         $req->bindValue(':confirmation',0);
         $req->bindParam(':token',$token);
         $req->bindParam(':name',$name);

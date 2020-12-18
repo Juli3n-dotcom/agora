@@ -36,6 +36,8 @@ CREATE TABLE photo
  statut INT
             (3) NOT NULL,
  date_enregistrement DATETIME NOT NULL,
+ last_login DATETIME DEFAULT
+NULL,
  confirmation TINYINT DEFAULT NULL,
  token VARCHAR
             (255) DEFAULT NULL,
