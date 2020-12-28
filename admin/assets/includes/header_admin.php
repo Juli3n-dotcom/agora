@@ -38,7 +38,6 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
     <div class="sidebar">
          <div class="sidebar__header">
            <h3 class="brand">
-              <span class="ti-unlink"></span>
               <span><?= $web_name ;?></span>
            </h3> 
             <label for="sidebar-toggle" class="ti-menu-alt"></label>
